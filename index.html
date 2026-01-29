@@ -1,539 +1,118 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ClaseCerca conecta alumnos con profesores particulares fuera del horario lectivo. Reserva clases online o presenciales con pagos seguros y perfiles verificados." />
-  <title>ClaseCerca | Profes particulares fuera del horario lectivo</title>
-  <style>
-    :root{
-      --bg:#0b1020;
-      --panel:#101a35;
-      --card:#0f1730;
-      --text:#eaf0ff;
-      --muted:#b9c5ff;
-      --line: rgba(255,255,255,.12);
-      --accent:#7c5cff;
-      --accent2:#2fe6c7;
-      --shadow: 0 18px 50px rgba(0,0,0,.35);
-      --radius: 18px;
-      --max: 1100px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial, sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(1200px 600px at 15% 0%, rgba(124,92,255,.30), transparent 60%),
-        radial-gradient(900px 500px at 85% 10%, rgba(47,230,199,.22), transparent 55%),
-        linear-gradient(180deg, var(--bg), #070a14 70%);
-      line-height:1.5;
-    }
-    a{color:inherit; text-decoration:none}
-    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
-    .nav{
-      position:sticky; top:0; z-index:10;
-      backdrop-filter: blur(10px);
-      background: rgba(11,16,32,.65);
-      border-bottom:1px solid var(--line);
-    }
-    .nav-inner{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-      gap:12px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight:800; letter-spacing:.2px;
-    }
-    .logo{
-      width:36px; height:36px; border-radius:12px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 10px 25px rgba(124,92,255,.25);
-    }
-    .menu{display:flex; gap:14px; align-items:center; flex-wrap:wrap}
-    .menu a{color:var(--muted); font-weight:600; font-size:14px; padding:8px 10px; border-radius:10px}
-    .menu a:hover{background: rgba(255,255,255,.06); color:var(--text)}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 14px; border-radius:12px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.06);
-      color:var(--text); font-weight:700;
-      box-shadow: 0 12px 30px rgba(0,0,0,.18);
-      transition: transform .15s ease, background .15s ease;
-      cursor:pointer;
-    }
-    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10)}
-    .btn.primary{
-      border-color: transparent;
-      background: linear-gradient(135deg, var(--accent), #5b8cff);
-    }
-    .btn.primary:hover{filter: brightness(1.05)}
-    .btn.ghost{background: transparent}
-    .hero{padding:64px 0 26px}
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:22px;
-      align-items:stretch;
-    }
-    h1{
-      margin:0 0 10px;
-      font-size: clamp(32px, 4.2vw, 54px);
-      line-height:1.1;
-      letter-spacing:-.8px;
-    }
-    .sub{
-      color: var(--muted);
-      font-size: clamp(15px, 1.6vw, 18px);
-      margin: 0 0 18px;
-      max-width: 60ch;
-    }
-    .hero-actions{display:flex; gap:10px; flex-wrap:wrap; margin: 14px 0 18px}
-    .pill-row{display:flex; gap:10px; flex-wrap:wrap}
-    .pill{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.05);
-      padding:8px 10px;
-      border-radius:999px;
-      color:var(--muted);
-      font-size:13px;
-    }
-    .panel{
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .search-box{padding:16px}
-    .search-box h3{margin:0 0 10px; font-size:16px}
-    .form-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:10px;
-    }
-    label{font-size:12px; color:var(--muted); display:block; margin-bottom:6px; font-weight:700}
-    input, select{
-      width:100%;
-      padding:11px 12px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background: rgba(7,10,20,.55);
-      color: var(--text);
-      outline:none;
-    }
-    input::placeholder{color: rgba(234,240,255,.55)}
-    .form-actions{
-      display:flex; gap:10px; margin-top:10px; flex-wrap:wrap
-    }
-    .hint{font-size:12px; color:rgba(234,240,255,.60); margin-top:10px}
-    .section{padding:30px 0}
-    .section h2{
-      font-size: clamp(22px, 2.6vw, 30px);
-      margin:0 0 10px;
-      letter-spacing:-.3px;
-    }
-    .section p.lead{
-      margin:0 0 16px;
-      color:var(--muted);
-      max-width: 75ch;
-    }
-    .grid-3{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px}
-    .card{
-      padding:16px;
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.04);
-      border:1px solid var(--line);
-    }
-    .card h3{margin:0 0 6px; font-size:16px}
-    .card p{margin:0; color:var(--muted); font-size:14px}
-    .icon{
-      width:40px; height:40px; border-radius:14px;
-      display:grid; place-items:center;
-      background: rgba(124,92,255,.20);
-      border: 1px solid rgba(124,92,255,.25);
-      margin-bottom:10px;
-      font-weight:900;
-    }
-    .grid-2{display:grid; grid-template-columns: 1fr 1fr; gap:12px}
-    .steps{counter-reset: step}
-    .step::before{
-      counter-increment: step;
-      content: counter(step);
-      width:34px; height:34px; border-radius:12px;
-      display:grid; place-items:center;
-      background: rgba(47,230,199,.16);
-      border:1px solid rgba(47,230,199,.22);
-      font-weight:900;
-      margin-bottom:10px;
-    }
-    .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    .badge{
-      font-size:12px; color:var(--muted);
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:7px 10px;
-      background: rgba(255,255,255,.04);
-    }
-    details{
-      border:1px solid var(--line);
-      border-radius: 14px;
-      background: rgba(255,255,255,.04);
-      padding: 12px 14px;
-    }
-    summary{
-      cursor:pointer;
-      font-weight:800;
-      color: var(--text);
-      list-style:none;
-    }
-    summary::-webkit-details-marker{display:none}
-    details p{color:var(--muted); margin:10px 0 0}
-    .cta{
-      padding:26px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-    }
-    .cta h3{margin:0 0 6px}
-    .cta p{margin:0; color:var(--muted)}
-    footer{
-      border-top:1px solid var(--line);
-      padding:22px 0 34px;
-      color: rgba(234,240,255,.70);
-      font-size: 13px;
-    }
-    .footer-grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:14px;
-      align-items:start;
-    }
-    .links{display:flex; gap:12px; flex-wrap:wrap; justify-content:flex-end}
-    .links a{color: rgba(234,240,255,.70)}
-    .links a:hover{color: var(--text)}
-    .small{font-size:12px; color:rgba(234,240,255,.55)}
-
-    /* Responsive */
-    @media (max-width: 880px){
-      .hero-grid{grid-template-columns: 1fr; }
-      .form-grid{grid-template-columns: 1fr}
-      .grid-3{grid-template-columns: 1fr}
-      .grid-2{grid-template-columns: 1fr}
-      .footer-grid{grid-template-columns: 1fr}
-      .links{justify-content:flex-start}
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Plataforma para buscar y ofrecer clases particulares." />
+  <title>ClassLoop | Clases particulares</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-  <!-- NAV -->
-  <div class="nav">
-    <div class="container">
-      <div class="nav-inner">
-        <a class="brand" href="#inicio" aria-label="Ir al inicio">
-          <span class="logo" aria-hidden="true"></span>
-          <span>ClaseCerca</span>
-        </a>
-        <nav class="menu" aria-label="Navegación principal">
-          <a href="#como-funciona">Cómo funciona</a>
-          <a href="#beneficios">Beneficios</a>
-          <a href="#materias">Materias</a>
-          <a href="#faq">FAQ</a>
-          <a class="btn ghost" href="#profes">Soy profesor</a>
-          <a class="btn primary" href="#buscar">Buscar profesor</a>
-        </nav>
-      </div>
-    </div>
-  </div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Ir a inicio">
+        <span class="brand-name">ClassLoop</span>
+      </a>
 
-  <!-- HERO -->
-  <header class="hero" id="inicio">
-    <div class="container">
-      <div class="hero-grid">
-        <div>
-          <h1>Profes particulares fuera del horario lectivo, <br/>sin complicaciones.</h1>
-          <p class="sub">
-            Encuentra profes verificados, reserva clases online o presenciales y paga con seguridad.
-            Ideal para refuerzo, dudas puntuales, recuperaciones y preparación de exámenes.
-          </p>
+      <nav class="nav" aria-label="Navegación principal">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">
+          Menú
+        </button>
 
-          <div class="hero-actions">
-            <a class="btn primary" href="#buscar">Buscar profesor</a>
-            <a class="btn" href="#profes">Quiero dar clases</a>
-          </div>
+        <ul id="menu" class="nav-list">
+          <li><a href="pages/producto.html">Producto</a></li>
+          <li><a href="pages/sostenibilidad.html">Sostenibilidad (ODS)</a></li>
+          <li><a href="pages/economia-circular.html">Economía circular</a></li>
+          <li><a href="pages/ciclo-vida.html">Ciclo de vida</a></li>
+          <li><a href="pages/ecodiseno-web.html">Ecodiseño web</a></li>
+          <li><a href="pages/equipo.html">Equipo</a></li>
+        </ul>
+      </nav>
 
-          <div class="pill-row" aria-label="Características principales">
-            <span class="pill">📅 Reserva con disponibilidad real</span>
-            <span class="pill">🔒 Pagos protegidos</span>
-            <span class="pill">⭐ Reseñas y verificación</span>
-            <span class="pill">💬 Chat interno</span>
-          </div>
-        </div>
-
-        <!-- Search panel -->
-        <aside class="panel search-box" id="buscar">
-          <h3>Encuentra un profesor</h3>
-          <form onsubmit="event.preventDefault(); alert('Demo: aquí iría la búsqueda de profesores.');">
-            <div class="form-grid">
-              <div>
-                <label for="materia">Materia</label>
-                <select id="materia" name="materia" required>
-                  <option value="" selected disabled>Elige una materia</option>
-                  <option>Matemáticas</option>
-                  <option>Inglés</option>
-                  <option>Lengua</option>
-                  <option>Física y Química</option>
-                  <option>Programación</option>
-                  <option>Economía</option>
-                </select>
-              </div>
-              <div>
-                <label for="nivel">Nivel</label>
-                <select id="nivel" name="nivel" required>
-                  <option value="" selected disabled>Selecciona nivel</option>
-                  <option>Primaria</option>
-                  <option>ESO</option>
-                  <option>Bachillerato</option>
-                  <option>FP</option>
-                  <option>Universidad</option>
-                  <option>Adultos</option>
-                </select>
-              </div>
-              <div>
-                <label for="modalidad">Modalidad</label>
-                <select id="modalidad" name="modalidad" required>
-                  <option value="" selected disabled>Online o presencial</option>
-                  <option>Online</option>
-                  <option>Presencial</option>
-                  <option>Ambas</option>
-                </select>
-              </div>
-              <div>
-                <label for="ciudad">Ciudad / Zona</label>
-                <input id="ciudad" name="ciudad" placeholder="Ej. Madrid, Centro" />
-              </div>
-            </div>
-
-            <div class="form-actions">
-              <button class="btn primary" type="submit">Buscar ahora</button>
-              <a class="btn" href="#como-funciona">Ver cómo funciona</a>
-            </div>
-            <p class="hint">* Esta es una demo: la web explica el producto, no requiere app real.</p>
-          </form>
-        </aside>
+      <div class="header-cta">
+        <a class="btn btn-primary" href="pages/producto.html#buscador">Buscar clases</a>
+        <a class="btn btn-secondary" href="pages/producto.html#ofrecer">Ofrecer clases</a>
       </div>
     </div>
   </header>
 
-  <!-- HOW IT WORKS -->
-  <section class="section" id="como-funciona">
-    <div class="container">
-      <h2>Cómo funciona</h2>
-      <p class="lead">En 4 pasos: encuentra, reserva y aprende con total tranquilidad.</p>
+  <main id="contenido">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Encuentra y ofrece clases particulares en minutos</h1>
+          <p>
+            Busca por materia, nivel y modalidad. Publica tu anuncio y contacta de forma sencilla.
+          </p>
 
-      <div class="grid-3 steps">
-        <div class="card step">
-          <h3>Busca</h3>
-          <p>Filtra por materia, nivel, precio, modalidad y disponibilidad real.</p>
-        </div>
-        <div class="card step">
-          <h3>Compara</h3>
-          <p>Revisa perfiles, reseñas, experiencia y verificación.</p>
-        </div>
-        <div class="card step">
-          <h3>Reserva</h3>
-          <p>Elige fecha y duración. Pago protegido dentro de la plataforma.</p>
-        </div>
-      </div>
-
-      <div class="grid-3 steps" style="margin-top:12px;">
-        <div class="card step">
-          <h3>Aprende</h3>
-          <p>Online con videollamada integrada o presencial en tu zona.</p>
-        </div>
-        <div class="card step">
-          <h3>Haz seguimiento</h3>
-          <p>Objetivos por asignatura, materiales compartidos y progreso.</p>
-        </div>
-        <div class="card step">
-          <h3>Valora</h3>
-          <p>Reseñas que mejoran la calidad y ayudan a otros alumnos.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BENEFITS -->
-  <section class="section" id="beneficios">
-    <div class="container">
-      <h2>Beneficios para todos</h2>
-      <p class="lead">Una plataforma pensada para estudiantes, familias y profesores particulares.</p>
-
-      <div class="grid-3">
-        <div class="card">
-          <div class="icon">🎯</div>
-          <h3>Refuerzo a medida</h3>
-          <p>Clases enfocadas en lo que necesitas: dudas, exámenes, recuperaciones o técnicas de estudio.</p>
-        </div>
-        <div class="card">
-          <div class="icon">🔒</div>
-          <h3>Seguridad y confianza</h3>
-          <p>Perfiles verificados, chat interno y pagos protegidos hasta completar la clase.</p>
-        </div>
-        <div class="card">
-          <div class="icon">⚡</div>
-          <h3>Rápido y flexible</h3>
-          <p>Disponibilidad real, clases fuera del horario lectivo y opción “Duda exprés” de 30 minutos.</p>
-        </div>
-      </div>
-
-      <div class="badges" aria-label="Características">
-        <span class="badge">📌 Online o presencial</span>
-        <span class="badge">🧾 Historial y objetivos</span>
-        <span class="badge">🧠 Aprendizaje adaptado</span>
-        <span class="badge">♿ Accesibilidad</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- SUBJECTS -->
-  <section class="section" id="materias">
-    <div class="container">
-      <h2>Materias y categorías</h2>
-      <p class="lead">Encuentra apoyo en asignaturas troncales, idiomas o habilidades digitales.</p>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3>📚 Refuerzo escolar</h3>
-          <p>Matemáticas, Lengua, Física y Química, Historia, Economía.</p>
-        </div>
-        <div class="card">
-          <h3>🗣️ Idiomas</h3>
-          <p>Inglés, Francés, Alemán: conversación, gramática y preparación de certificados.</p>
-        </div>
-        <div class="card">
-          <h3>💻 Tecnología</h3>
-          <p>Programación, ofimática, Excel, bases de datos y competencias digitales.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROFESSORS -->
-  <section class="section" id="profes">
-    <div class="container">
-      <h2>¿Eres profesor particular?</h2>
-      <p class="lead">Crea tu perfil, fija tus precios y gestiona tu agenda en un solo lugar.</p>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3>Panel del profesor</h3>
-          <p>Calendario, disponibilidad, mensajes, seguimiento del alumno y cobros en un dashboard sencillo.</p>
-          <div class="badges">
-            <span class="badge">📅 Agenda</span>
-            <span class="badge">💬 Mensajes</span>
-            <span class="badge">💳 Pagos</span>
-            <span class="badge">📈 Analíticas (Pro)</span>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="pages/producto.html#buscador">Buscar clases</a>
+            <a class="btn btn-secondary" href="pages/producto.html#ofrecer">Ofrecer clases</a>
           </div>
-        </div>
-        <div class="card">
-          <h3>Visibilidad y reputación</h3>
-          <p>Reseñas verificadas y perfil destacado por especialidad para llegar a más alumnos.</p>
-          <div class="hero-actions" style="margin-top:12px;">
-            <a class="btn primary" href="#buscar" aria-label="Ir al buscador">Ver demanda</a>
-            <a class="btn" href="#faq" aria-label="Ir a preguntas frecuentes">Resolver dudas</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="section">
-    <div class="container">
-      <div class="panel cta">
-        <div>
-          <h3>Empieza hoy con ClaseCerca</h3>
-          <p>Refuerzo fuera del horario lectivo con reserva fácil, seguridad y flexibilidad.</p>
-          <p class="small">Demo académica: la web es el producto final y explica la idea.</p>
+          <ul class="hero-badges" aria-label="Características principales">
+            <li>📚 Materias</li>
+            <li>🎯 Niveles</li>
+            <li>💻 Online</li>
+            <li>📍 Presencial</li>
+          </ul>
         </div>
-        <div class="hero-actions" style="margin:0;">
-          <a class="btn primary" href="#buscar">Buscar profesor</a>
-          <a class="btn" href="#profes">Crear perfil de profesor</a>
+
+        <div class="hero-media" aria-hidden="true">
+          <div class="placeholder-media">Imagen/ilustración (opcional)</div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FAQ -->
-  <section class="section" id="faq">
-    <div class="container">
-      <h2>Preguntas frecuentes</h2>
-      <p class="lead">Resolvemos dudas típicas para alumnos y profesores.</p>
+    <!-- CÓMO FUNCIONA (muy breve) -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2>Cómo funciona</h2>
 
-      <div class="grid-2">
-        <details>
-          <summary>¿Cómo garantizáis la seguridad de los pagos?</summary>
-          <p>El pago queda protegido y se libera al profesor cuando la clase se completa. En caso de incidencia, el soporte revisa la situación.</p>
-        </details>
-
-        <details>
-          <summary>¿Puedo reservar una clase rápida de 30 minutos?</summary>
-          <p>Sí. La opción “Duda exprés” sirve para resolver ejercicios concretos o repasar un tema de forma puntual.</p>
-        </details>
-
-        <details>
-          <summary>¿Cómo se verifica a los profesores?</summary>
-          <p>Verificación de identidad y revisión de información del perfil. Además, las reseñas de alumnos ayudan a mantener la calidad.</p>
-        </details>
-
-        <details>
-          <summary>¿Hay clases online y presenciales?</summary>
-          <p>Ambas. Online con videollamada integrada; presencial según zona y disponibilidad del profesor.</p>
-        </details>
-
-        <details>
-          <summary>¿Qué pasa si un profesor no se presenta?</summary>
-          <p>Se activa un protocolo de incidencia: reembolso o reprogramación prioritaria, según el caso.</p>
-        </details>
-
-        <details>
-          <summary>¿Cómo ganáis dinero si el registro es gratis?</summary>
-          <p>Con una pequeña comisión por clase reservada y, opcionalmente, planes Pro para profesores que quieren más visibilidad y herramientas.</p>
-        </details>
+        <ol class="steps">
+          <li class="step">
+            <h3>1) Elige</h3>
+            <p>Materia, nivel y modalidad.</p>
+          </li>
+          <li class="step">
+            <h3>2) Encuentra</h3>
+            <p>Resultados y opciones para comparar.</p>
+          </li>
+          <li class="step">
+            <h3>3) Contacta</h3>
+            <p>Acuerda horario y precio.</p>
+          </li>
+        </ol>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="brand" style="margin-bottom:8px;">
-            <span class="logo" aria-hidden="true"></span>
-            <span>ClaseCerca</span>
-          </div>
-          <div class="small">
-            Plataforma para conectar alumnos con profesores particulares fuera del horario lectivo.
-            Proyecto académico: la web presenta y justifica la idea (no requiere app real).
-          </div>
-        </div>
-        <div class="links" aria-label="Enlaces del pie">
-          <a href="#inicio">Inicio</a>
-          <a href="#buscar">Buscar</a>
-          <a href="#profes">Soy profesor</a>
-          <a href="#faq">FAQ</a>
-          <a href="#" onclick="alert('Demo: aquí irían Términos y Privacidad.'); return false;">Legal</a>
-          <a href="#" onclick="alert('Demo: aquí iría un formulario de contacto.'); return false;">Contacto</a>
+    <!-- CTA FINAL -->
+    <section class="section cta">
+      <div class="container cta-inner">
+        <h2>Empieza ahora</h2>
+        <p>Explora clases disponibles o publica tu oferta.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="pages/producto.html#buscador">Buscar clases</a>
+          <a class="btn btn-secondary" href="pages/producto.html#ofrecer">Ofrecer clases</a>
         </div>
       </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>ClassLoop</strong> — Proyecto web en HTML/CSS/JS.</p>
+      <ul class="footer-links">
+        <li><a href="pages/producto.html">Producto</a></li>
+        <li><a href="pages/equipo.html">Equipo</a></li>
+      </ul>
     </div>
   </footer>
 
+  <script src="js/main.js" defer></script>
 </body>
 </html>
