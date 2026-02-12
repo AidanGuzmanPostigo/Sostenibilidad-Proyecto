@@ -1,0 +1,163 @@
+@import url(https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap);
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #e6f2ed;
+  font-family: "Arsenal";
+}
+
+html, body {
+  height: 100%;
+}
+
+a{
+  text-decoration: none;
+  color: #c9f2e3;
+}
+
+body{
+  background-color: #0f3d2e;
+  display: flex;
+  flex-direction: column;
+}
+
+hr{
+  border: 0;
+  height: 2px;
+  background-color: #7fd1ae;
+  margin: 1em 0;
+}
+
+main {
+  width: min(1100px, 90%); 
+  margin: 20px auto; 
+  background-color: #145c44;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  flex: 1;
+  border-radius: 8px;
+}
+section h2 {
+  text-align: center;
+  font-size: 2.2em;
+  margin: .5em auto .5em;
+  color: #d2f5e6;
+  padding:0 1em;
+}
+
+h3{
+  font-size: 1.3em;
+  line-height: 1.6;
+  margin: .5em 1em;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 1em 1.5em;
+  margin: 1em auto;
+  border-radius: 8px;
+  max-width: 900px;
+  
+}
+
+h3, header p {
+  text-align: center;
+}
+
+p{
+  font-size: 1.1em;
+  list-style: inside;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: #0d2f24;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  border-bottom: 2px solid #1fa37a;
+}
+
+.site-header h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.8em;
+  color: #9ef0cf;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.main-nav a:hover{
+  background-color: #1fa37a;
+  color: #0d2f24;
+  padding: 5px 8px;
+  border-radius: 4px;
+}
+
+.open-menu {
+  position: fixed;
+  top: 14px;
+  left: 10px;
+  z-index: 60;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9ef0cf;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.side-menu {
+  position: fixed;
+  left: -230px;            
+  width: 230px;
+  height: 100%;
+  padding-top: 60px;
+  transition: left 0.3s ease;
+  z-index: 5;
+  background-color: #0f4a38;
+}
+
+.side-menu.active {
+  left: 0;                 
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu a {
+  display: block;
+  padding: 14px 20px;
+  color: #b7f0d8;
+}
+
+.side-menu a:hover{
+  background-color: #1fa37a;
+  color: #0d2f24;
+}
+
+button:active{
+  transform: scale(0.9);
+}
+
+button {
+  margin: auto;
+}
+
+footer {
+  text-align: center;
+  background-color: #0d2f24;
+  padding: 1em;
+  color: #9ef0cf;
+}
+ul {
+  list-style-position: inside;
+}
