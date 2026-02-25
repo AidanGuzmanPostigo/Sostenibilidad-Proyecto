@@ -1,6 +1,6 @@
-const sideMenu = document.getElementById("sideMenu");
-    const toggleBtn = document.querySelector(".open-menu");
-    const toggleIcon = document.getElementById("toggleIcon"); 
+const sideMenu = document.querySelector("#sideMenu");
+const toggleBtn = document.querySelector(".open-menu");
+const toggleIcon = document.querySelector("#toggleIcon"); 
     toggleBtn.addEventListener("click", () => {
         sideMenu.classList.toggle("active");
         toggleBtn.classList.toggle("active");
