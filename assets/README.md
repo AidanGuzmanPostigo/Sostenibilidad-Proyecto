@@ -63,14 +63,25 @@ En nuestra página web hay un formulario para aquellos usuarios o empresas que q
 
 
 
-Integrantes del proyecto: Aidan Guzmán Postigo, Pedro Alexandro Bazan Cojan, Samuel Puerta Merino.
+## Integrantes del proyecto: 
+Aidan Guzmán Postigo
 
-Reparto de las tareas:
+Pedro Alexandro Bazan Cojan
+
+Samuel Puerta Merino.
+
+## Reparto de las tareas:
+
 Montaje de README.md - Aidan en su totalidad.
+
 Coordinación y gestión de Git - Trabajado en conjunto.
+
 CSS - Trabajado en conjunto y reutilizado de proyectos anteriores además de ser modificados.
+
 JAVASCRIPT - Aidan en su totalidad.
+
 SOSTENIBILIDAD - Aidan en su totalidad.
+
 INDEX - Samuel y revisado y modificado por Aidan.
 PRODUCTO - Samuel y revisado y modificado por Pedro y Aidan.
 EQUIPO (ECONOMIA CIRCULAR) - Pedro y revisado y modificado por Aidan.
