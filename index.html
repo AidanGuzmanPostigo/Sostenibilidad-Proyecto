@@ -1,118 +1,126 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Plataforma para buscar y ofrecer clases particulares." />
-  <title>ClassLoop | Clases particulares</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ClaseCerca</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/main.js" defer></script>
 </head>
-
 <body>
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Ir a inicio">
-        <span class="brand-name">ClassLoop</span>
-      </a>
-
-      <nav class="nav" aria-label="Navegación principal">
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">
-          Menú
-        </button>
-
-        <ul id="menu" class="nav-list">
-          <li><a href="pages/producto.html">Producto</a></li>
-          <li><a href="pages/sostenibilidad.html">Sostenibilidad (ODS)</a></li>
-          <li><a href="pages/economia-circular.html">Economía circular</a></li>
-          <li><a href="pages/ciclo-vida.html">Ciclo de vida</a></li>
-          <li><a href="pages/ecodiseno-web.html">Ecodiseño web</a></li>
-          <li><a href="pages/equipo.html">Equipo</a></li>
-        </ul>
-      </nav>
-
-      <div class="header-cta">
-        <a class="btn btn-primary" href="pages/producto.html#buscador">Buscar clases</a>
-        <a class="btn btn-secondary" href="pages/producto.html#ofrecer">Ofrecer clases</a>
-      </div>
-    </div>
+    <header class="site-header">
+    <h1>ClaseCerca</h1>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="pages/ciclo-vida.html">Ciclo de vida</a></li>
+        <li><a href="pages/equipo.html">Economía circular</a></li>
+        <li><a href="pages/producto.html">Producto</a></li>
+        <li><a href="pages/sostenibilidad.html">Sostenibilidad</a></li>
+      </ul>
+    </nav>
+    <button class="open-menu" aria-label="Abrir menú lateral"><span id="toggleIcon">☰</span></button>
   </header>
-
-  <main id="contenido">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <h1>Encuentra y ofrece clases particulares en minutos</h1>
-          <p>
-            Busca por materia, nivel y modalidad. Publica tu anuncio y contacta de forma sencilla.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="pages/producto.html#buscador">Buscar clases</a>
-            <a class="btn btn-secondary" href="pages/producto.html#ofrecer">Ofrecer clases</a>
-          </div>
-
-          <ul class="hero-badges" aria-label="Características principales">
-            <li>📚 Materias</li>
-            <li>🎯 Niveles</li>
-            <li>💻 Online</li>
-            <li>📍 Presencial</li>
-          </ul>
-        </div>
-
-        <div class="hero-media" aria-hidden="true">
-          <div class="placeholder-media">Imagen/ilustración (opcional)</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CÓMO FUNCIONA (muy breve) -->
-    <section class="section section-alt">
-      <div class="container">
-        <h2>Cómo funciona</h2>
-
-        <ol class="steps">
-          <li class="step">
-            <h3>1) Elige</h3>
-            <p>Materia, nivel y modalidad.</p>
-          </li>
-          <li class="step">
-            <h3>2) Encuentra</h3>
-            <p>Resultados y opciones para comparar.</p>
-          </li>
-          <li class="step">
-            <h3>3) Contacta</h3>
-            <p>Acuerda horario y precio.</p>
-          </li>
+  <nav id="sideMenu" class="side-menu">
+    <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="pages/ciclo-vida.html">Ciclo de vida</a></li>
+        <li><a href="pages/equipo.html">Relación con la economía circular</a></li>
+        <li><a href="pages/producto.html">Presentación del producto</a></li>
+        <li><a href="pages/sostenibilidad.html">Relación con la sostenibilidad</a></li>
+      </ul>
+  </nav>
+  <main>
+    <section id="hero">
+      <h2>Educación gratuita, accesible y sostenible</h2>
+      <h3>
+        ClaseCerca conecta profesores y alumnos en una plataforma digital que fomenta la igualdad educativa y reduce el impacto ambiental.
+      </h3>
+      <hr>
+      <h2>¿Qué es ClaseCerca?</h2>
+      <h3>
+        Es una plataforma digital que conecta docentes cualificados con 
+        estudiantes que necesitan apoyo académico, eliminando barreras 
+        económicas y geográficas.
+      </h3>
+      <hr>
+      <h2>Impacto sostenible</h2>
+      <h3>
+        <ul>
+          <li>Reduce desplazamientos y emisiones.</li>
+          <li>Fomenta la igualdad de oportunidades.</li>
+          <li>Reutiliza contenidos educativos grabados.</li>
+        </ul>  
+      </h3>
+      <hr>
+      <h2>¿Cómo funciona?</h2>
+      <h3>
+        <ol>
+          <li>Los docentes se registran y validan su perfil.</li>
+          <li>Los alumnos buscan la materia que necesitan.</li>
+          <li>Se realizan clases online con herramientas interactivas.</li>
+          <li>Las clases quedan guardadas para su reutilización.</li>
         </ol>
-      </div>
+      </h3>
+      <hr>
+      <h2>Preguntas frecuentes</h2>
+      <h3>
+        Puede acceder a nuestras preguntas frecuentes mediante el siguiente enlace, le recomendamos leerlas antes de registrarse.
+        <br>
+        <a href="/assets/README.md">Ver todas las preguntas frecuentes</a>
+      </h3>
+      <hr>
     </section>
-
-    <!-- CTA FINAL -->
-    <section class="section cta">
-      <div class="container cta-inner">
-        <h2>Empieza ahora</h2>
-        <p>Explora clases disponibles o publica tu oferta.</p>
-        <div class="cta-actions">
-          <a class="btn btn-primary" href="pages/producto.html#buscador">Buscar clases</a>
-          <a class="btn btn-secondary" href="pages/producto.html#ofrecer">Ofrecer clases</a>
-        </div>
-      </div>
+    <section id="registro">
+      <h2>Registro</h2>
+      <form>
+        <label>Nombre:</label>
+        <input type="text" required>
+        <label>Email:</label>
+        <input type="email" required>
+        <label>Contraseña</label>
+        <input type="password" required>
+        <label>Tipo de usuario</label>
+        <select required>
+          <option value="alumno">Alumno</option>
+          <option value="docente">Docente</option>
+        </select>
+        <button type="submit">Crear cuenta</button>
+      </form>
+      <hr>
+    </section>
+    <section id="patrocinio">
+      <h2>Colabora con nosotros</h2>
+      <h3>
+        Si eres empresa y deseas apoyar un proyecto educativo sostenible,
+        puedes contactarnos aquí.
+      </h3>
+      <form>
+        <label>Nombre de la empresa</label>
+        <input type="text" required>
+        <label>Email de contacto</label>
+        <input type="email" required>
+        <label>Mensaje</label>
+        <textarea required></textarea>
+        <button type="submit">Enviar propuesta</button>
+      </form>
+      <hr>
+    </section>
+    <section id="equipo">
+      <h2>Equipo del proyecto</h2>
+      <h3>
+        Proyecto desarrollado por:
+        <br>
+        <ul>
+          <li>Aidan Guzmán Postigo.</li>
+          <li>Pedro Alexandro Bazan Cojan.</li>
+          <li>Samuel Puerta Merino.</li>
+        </ul>
+      </h3>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p><strong>ClassLoop</strong> — Proyecto web en HTML/CSS/JS.</p>
-      <ul class="footer-links">
-        <li><a href="pages/producto.html">Producto</a></li>
-        <li><a href="pages/equipo.html">Equipo</a></li>
-      </ul>
-    </div>
+  <footer>
+    <p><a href="#">&copy; 2026 — ClaseCerca</a></p>
   </footer>
-
-  <script src="js/main.js" defer></script>
 </body>
 </html>
