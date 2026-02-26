@@ -83,6 +83,9 @@ JAVASCRIPT - Aidan en su totalidad.
 SOSTENIBILIDAD - Aidan en su totalidad.
 
 INDEX - Samuel y revisado y modificado por Aidan.
+
 PRODUCTO - Samuel y revisado y modificado por Pedro y Aidan.
+
 EQUIPO (ECONOMIA CIRCULAR) - Pedro y revisado y modificado por Aidan.
+
 CICLO-VIDA - Pedro y revisado y modificado por Aidan.
