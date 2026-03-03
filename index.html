@@ -73,13 +73,13 @@
     </section>
     <section id="registro">
       <h2>Registro</h2>
-      <form>
+      <form id="formRegistro" novalidate>
         <label>Nombre:</label>
-        <input type="text" required>
+        <input type="text" id="nombre">
         <label>Email:</label>
-        <input type="email" required>
+        <input type="email" id="email">
         <label>Contraseña</label>
-        <input type="password" required>
+        <input type="password" id="contrasenna">
         <label>Tipo de usuario</label>
         <select required>
           <option value="alumno">Alumno</option>
@@ -95,13 +95,13 @@
         Si eres empresa y deseas apoyar un proyecto educativo sostenible,
         puedes contactarnos aquí.
       </h3>
-      <form>
+      <form id="formPatrocinio" novalidate>
         <label>Nombre de la empresa</label>
-        <input type="text" required>
+        <input type="text" id="nombreEmpresa">
         <label>Email de contacto</label>
-        <input type="email" required>
+        <input type="email" id="emailEmpresa">
         <label>Mensaje</label>
-        <textarea required></textarea>
+        <textarea id="mensajeEmpresa"></textarea>
         <button type="submit">Enviar propuesta</button>
       </form>
       <hr>
