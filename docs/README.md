@@ -61,6 +61,14 @@ En nuestra página web hay un formulario para aquellos usuarios o empresas que q
 
 
 
+## Página web de ClaseCerca
+
+https://aidanguzmanpostigo.github.io/Sostenibilidad-Proyecto/
+
+## Historial de commits
+![Commit log 1](../assets/commitLog1.png)
+![Commit log 2](../assets/commitLog2.png)
+![Commit log 3](../assets/commitLog3.png)
 
 
 ## Integrantes del proyecto: 

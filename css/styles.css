@@ -195,3 +195,16 @@ form button {
   font-size: 1.1em;
   cursor: pointer;
 }
+figure {
+  margin: 1em;
+}
+
+img {
+  width: 30%;
+  display: block;
+  margin: auto;
+  
+}
+a img:hover {
+  transform: scale(1.03);
+}
